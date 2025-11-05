@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bridgo</title>
+  
+  <style>
+ 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    /* Navbar container */
+    nav {
+      background-color: #ffffff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 0.75rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Brand/logo */
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #2a9d8f;
+      letter-spacing: 1.2px;
+      cursor: pointer;
+      user-select: none;
+      transition: color 0.3s ease;
+      text-decoration: none;
+    }
+
+    .logo:hover {
+      color: #21867a;
+    }
+
+    /* Nav links container */
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.8rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+      padding: 0.25rem 0;
+      border-bottom: 2px solid transparent;
+      transition: color 0.3s ease, border-bottom-color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #2a9d8f;
+      border-bottom-color: #2a9d8f;
+    }
+
+    /* Dropdown styles */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #ffffff;
+      min-width: 180px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      z-index: 1;
+      top: 100%;
+      left: 0;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .dropdown-content a {
+      color: #555;
+      padding: 0.75rem 1rem;
+      display: block;
+      font-weight: 400;
+      border-bottom: 1px solid #f0f0f0;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .dropdown-content a:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f9f9f9;
+      color: #2a9d8f;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+      border-bottom-color: #2a9d8f;
+    }
+
+    /* Button style (optional) */
+    .btn-signup {
+      background-color: #2a9d8f;
+      color: #fff;
+      border: none;
+      padding: 0.45rem 1.25rem;
+      border-radius: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s ease, color 0.2s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-signup:hover {
+      background-color: #21867a;
+      color: #fff;
+    }
+
+    /* Hero image overlay styles */
+    .hero-container {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      overflow: hidden;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+      z-index: 2;
+      max-width: 80%;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      margin-bottom: 2rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-login {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+      padding: 0.45rem 1.25rem;
+      border-radius: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-login:hover {
+      background-color: white;
+      color: #333;
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        padding: 0 1rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .btn-signup,
+      .btn-login {
+        width: 100%;
+        max-width: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#" class="logo">Bridgo</a>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn">Features</a>
+        <div class="dropdown-content">
+          <a href="#">Tallest</a>
+          <a href="#">Oldest</a>
+          <a href="#">Popular</a>
+        </div>
+      </li>
+      <li><a href="#">Queries</a></li>
+      <li><a href="#">Gallery</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Feedback</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+    <a href="#" class="btn-signup">Sign Up</a>
+  </nav>
+  <div class="hero-container">
+    <img src="nature.jpg" alt="Nature Landscape" class="hero-image">
+    <div class="hero-content">
+      <h1 class="hero-title">Discover the World's Most Iconic Bridges</h1>
+      <div class="hero-buttons">
+        <a href="#" class="btn-signup">Sign Up</a>
+        <a href="#" class="btn-login">Login</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

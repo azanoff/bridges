@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Oldest Buildings - Bridgo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background-color: #0f172a;
+      color: #e2e8f0;
+    }
+
+    /* Navbar */
+    nav {
+      background-color: #1e293b;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      padding: 0.75rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #2dd4bf;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .logo:hover {
+      color: #14b8a6;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.8rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #cbd5e1;
+      font-weight: 500;
+      border-bottom: 2px solid transparent;
+      transition: color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #2dd4bf;
+      border-bottom-color: #2dd4bf;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #1e293b;
+      min-width: 180px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      border-radius: 5px;
+      top: 100%;
+      left: 0;
+      overflow: hidden;
+    }
+
+    .dropdown-content a {
+      color: #cbd5e1;
+      padding: 0.75rem 1rem;
+      display: block;
+      border-bottom: 1px solid #334155;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #334155;
+      color: #2dd4bf;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .btn-signup {
+      background-color: #2dd4bf;
+      color: #0f172a;
+      border: none;
+      padding: 0.45rem 1.25rem;
+      border-radius: 20px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-signup:hover {
+      background-color: #14b8a6;
+      color: #fff;
+    }
+
+    /* Page Title */
+    .page-header {
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    .page-header h1 {
+      font-size: 2.5rem;
+      color: #2dd4bf;
+      font-weight: 700;
+    }
+
+    .page-header p {
+      color: #cbd5e1;
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+    }
+
+    /* Cards Section */
+    .building-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 2rem 3rem 4rem;
+    }
+
+    .card {
+      background: #1e293b;
+      border: none;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card-img-top {
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      text-align: center;
+    }
+
+    .card-body h5 {
+      color: #2dd4bf;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .card-text {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      margin-top: 15px;
+    }
+
+    .btn-more {
+      display: inline-block;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 2px solid #14b8a6;
+      padding-bottom: 2px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="#" class="logo">Bridgo</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn">Features</a>
+        <div class="dropdown-content">
+          <a href="tall.html">Tallest</a>
+          <a href="oldest.html">Oldest</a>
+          <a href="popular.html">Popular</a>
+        </div>
+      </li>
+      <li><a href="queries.html">Queries</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="aboutus.html">About</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+      <li><a href="#">Travel</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+    <a href="signup.html" class="btn-signup">Sign Up</a>
+  </nav>
+  <section class="page-header">
+    <h1>Oldest Buildings in the World</h1>
+    <p>Step back in time and explore the world’s most ancient architectural wonders.</p>
+  </section>
+
+
+  <div class="building-cards container">
+    <div class="card">
+      <img src="tepe.jpg" class="card-img-top" alt="Göbekli Tepe">
+      <div class="card-body">
+        <h5 class="card-title">Gobekli Tepe</h5>
+        <p class="card-text">Tworld's oldest temple in Turkey.</p>
+        <a href="#" class="btn-more">More Info</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="giza.jpg" class="card-img-top" alt="Pyramids of Giza">
+      <div class="card-body">
+        <h5 class="card-title">Pyramids of Giza</h5>
+        <p class="card-text">Ancient tombs built over 4,000 years ago.</p>
+        <a href="giza.docx" class="btn-more">More Info</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="stonehenge.jpg" class="card-img-top" alt="Stonehenge">
+      <div class="card-body">
+        <h5 class="card-title">Stonehenge</h5>
+        <p class="card-text">A prehistoric stone monument in England.</p>
+        <a href="stonehenge.docx" class="btn-more">More Info</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="zigg.jpg" class="card-img-top" alt="Ziggurat of Ur">
+      <div class="card-body">
+        <h5 class="card-title">Ziggurat of Ur</h5>
+        <p class="card-text">Ancient  temple to moon god.</p>
+        <a href="Ziggurat.docx" class="btn-more">More Info</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="parthenon.jpg" class="card-img-top" alt="Parthenon">
+      <div class="card-body">
+        <h5 class="card-title">Parthenon</h5>
+        <p class="card-text">Greek temple dedicated to Athena</p>
+        <a href="The_Parthenon.docx" class="btn-more">More Info</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="colosseum.jpg" class="card-img-top" alt="Colosseum">
+      <div class="card-body">
+        <h5 class="card-title">Colosseum</h5>
+        <p class="card-text">Rome’s iconic ancient amphitheater.</p>
+        <a href="Colosseum.docx" class="btn-more">More Info</a>
+      </div>
+    </div>
+  </div>
+  <div class="container p-4">
+    <div class="row">
+      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Bridgo</h5>
+        <p>
+          Explore the world’s most iconic bridges, towers, and landmarks with Bridgo.  
+          Learn about history, design, and engineering all in one place.
+        </p>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Quick Links</h5>
+        <ul class="list-unstyled mb-0">
+          <li><a href="index.html" class="text-light text-decoration-none">Home</a></li>
+          <li><a href="popular.html" class="text-light text-decoration-none">Popular</a></li>
+          <li><a href="oldest.html" class="text-light text-decoration-none">Oldest</a></li>
+          <li><a href="tallest.html" class="text-light text-decoration-none">Tallest</a></li>
+          <li><a href="gallery.html" class="text-light text-decoration-none">Gallery</a></li>
+          <li><a href="queries.html" class="text-light text-decoration-none">FAQs</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Contact</h5>
+        <ul class="list-unstyled mb-0">
+          <li><i class="bi bi-envelope me-2"></i> info@bridgo.com</li>
+          <li><i class="bi bi-phone me-2"></i> +92 300 1234567</li>
+          <li><i class="bi bi-geo-alt me-2"></i> Karachi, Pakistan</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

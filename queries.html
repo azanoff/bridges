@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Queries | Bridgo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0f172a;
+      color: #e2e8f0;
+    }
+
+    /* Navbar */
+    nav {
+      background-color: #1e293b;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      padding: 0.75rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #2dd4bf;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .logo:hover {
+      color: #14b8a6;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.8rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #cbd5e1;
+      font-weight: 500;
+      border-bottom: 2px solid transparent;
+      transition: color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #2dd4bf;
+      border-bottom-color: #2dd4bf;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #1e293b;
+      min-width: 180px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      border-radius: 5px;
+      top: 100%;
+      left: 0;
+      overflow: hidden;
+    }
+
+    .dropdown-content a {
+      color: #cbd5e1;
+      padding: 0.75rem 1rem;
+      display: block;
+      border-bottom: 1px solid #334155;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #334155;
+      color: #2dd4bf;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .btn-signup {
+      background-color: #2dd4bf;
+      color: #0f172a;
+      border: none;
+      padding: 0.45rem 1.25rem;
+      border-radius: 20px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-signup:hover {
+      background-color: #14b8a6;
+      color: #fff;
+    }
+
+    /* Heading */
+    h1 {
+      text-align: center;
+      color: #2dd4bf;
+      margin: 40px 0 20px;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    /* Accordion */
+    .accordion {
+      max-width: 850px;
+      margin: 0 auto 80px;
+      background-color: transparent;
+    }
+
+    .accordion-item {
+      background-color: #1e293b;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+      margin-bottom: 1.2rem;
+    }
+
+    .accordion-button {
+      background-color: #1e293b;
+      color: #e2e8f0;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      transition: background-color 0.2s ease;
+    }
+
+    .accordion-button:not(.collapsed) {
+      background-color: #2dd4bf;
+      color: #0f172a;
+    }
+
+    .accordion-button:focus {
+      box-shadow: none;
+    }
+
+    .accordion-body {
+      background-color: #1e293b;
+      color: #cbd5e1;
+      padding: 1.2rem 1.5rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+   <nav>
+    <a href="#" class="logo">Bridgo</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn">Features</a>
+        <div class="dropdown-content">
+          <a href="tall.html">Tallest</a>
+          <a href="oldest.html">Oldest</a>
+          <a href="popular.html">Popular</a>
+        </div>
+      </li>
+      <li><a href="queries.html">Queries</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="aboutus.html">About</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+      <li><a href="#">Travel</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+    <a href="signup.html" class="btn-signup">Sign Up</a>
+  </nav>
+
+  <h1>Queries</h1>
+
+  <div class="accordion" id="accordionExample">
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+          1. What’s the tallest bridge in the world?
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          The Millau Viaduct in France stands 343 meters tall and remains the tallest bridge on Earth — an engineering marvel since 2004.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+          2. Which bridge is the oldest still in use?
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          The Ponte Fabricio in Rome, built in 62 BC, still serves pedestrians — over 2000 years later.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingThree">
+        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+          3. What makes a bridge iconic?
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          Its design, history, and cultural impact — like the Golden Gate Bridge, famous worldwide for its architecture and color.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingFour">
+        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+          4. What’s the longest bridge ever built?
+        </button>
+      </h2>
+      <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          China’s Danyang–Kunshan Grand Bridge stretches an incredible 164.8 km, linking Beijing and Shanghai.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingFive">
+        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFive">
+          5. Which bridge offers the best view?
+        </button>
+      </h2>
+      <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          Sydney Harbour Bridge gives breathtaking skyline and sea views — especially from its pedestrian path.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingSix">
+        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseSix">
+          6. What’s the most famous bridge globally?
+        </button>
+      </h2>
+      <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          The Golden Gate Bridge in San Francisco — built in 1937 — is recognized across the globe.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingSeven">
+        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseSeven">
+          7. What are suspension bridges known for?
+        </button>
+      </h2>
+      <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          They use cables to hang decks — offering both strength and flexibility, like the Brooklyn Bridge.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingEight">
+        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseEight">
+          8. What’s the toughest bridge design?
+        </button>
+      </h2>
+      <div id="collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          Arch bridges — their curved design evenly spreads the load, making them ultra-strong and durable.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingNine">
+        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseNine">
+          9. Which Asian bridge stands out most?
+        </button>
+      </h2>
+      <div id="collapseNine" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          The Tsing Ma Bridge in Hong Kong — one of the world’s longest suspension bridges and a vital city icon.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTen">
+        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTen">
+          10. Why are bridges so important?
+        </button>
+      </h2>
+      <div id="collapseTen" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          Bridges connect communities, enable trade, and stand as monuments to human innovation and unity.
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="container p-4">
+    <div class="row">
+      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Bridgo</h5>
+        <p>
+          Explore the world’s most iconic bridges, towers, and landmarks with Bridgo.  
+          Learn about history, design, and engineering all in one place.
+        </p>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Quick Links</h5>
+        <ul class="list-unstyled mb-0">
+          <li><a href="index.html" class="text-light text-decoration-none">Home</a></li>
+          <li><a href="popular.html" class="text-light text-decoration-none">Popular</a></li>
+          <li><a href="tallest.html" class="text-light text-decoration-none">Tallest</a></li>
+          <li><a href="gallery.html" class="text-light text-decoration-none">Gallery</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Contact</h5>
+        <ul class="list-unstyled mb-0">
+          <li><i class="bi bi-envelope me-2"></i> info@bridgo.com</li>
+          <li><i class="bi bi-phone me-2"></i> +92 300 1234567</li>
+          <li><i class="bi bi-geo-alt me-2"></i> Karachi, Pakistan</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

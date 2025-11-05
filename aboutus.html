@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us | Bridgo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family:'Segoe UI', Tahoma, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+    }
+    nav {
+      background:#111;
+      box-shadow:0 2px 5px rgba(0,0,0,0.4);
+      padding:0.75rem 2rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .logo {
+      font-size:1.5rem;
+      font-weight:700;
+      color:#00bfa5;
+      text-decoration:none;
+      transition:color 0.3s ease;
+    }
+    .logo:hover { color:#00d4b3; }
+    .nav-links {
+      list-style:none;
+      display:flex;
+      gap:1.8rem;
+    }
+    .nav-links a {
+      text-decoration:none;
+      color:#ccc;
+      font-weight:500;
+      border-bottom:2px solid transparent;
+      transition:color 0.3s ease, border-bottom-color 0.3s ease;
+    }
+    .nav-links a:hover {
+      color:#00d4b3;
+      border-bottom-color:#00d4b3;
+    }
+    .dropdown {
+      position: relative;
+    }
+    .dropdown-content {
+      display:none;
+      position:absolute;
+      background:#1b1f24;
+      min-width:180px;
+      box-shadow:0 4px 8px rgba(0,0,0,0.5);
+      border-radius:4px;
+      overflow:hidden;
+      z-index:1;
+      top:100%; left:0;
+    }
+    .dropdown-content a {
+      color:#ccc;
+      padding:0.75rem 1rem;
+      display:block;
+      border-bottom:1px solid #2a2a2a;
+      transition:background-color 0.3s ease, color 0.3s ease;
+    }
+    .dropdown-content a:last-child { border-bottom:none; }
+    .dropdown-content a:hover {
+      background:#00bfa5;
+      color:#fff;
+    }
+    .dropdown:hover .dropdown-content {
+      display:block;
+    }
+    .btn-signup {
+      background:#00bfa5;
+      color:#fff;
+      border:none;
+      padding:0.45rem 1.25rem;
+      border-radius:20px;
+      font-weight:600;
+      text-decoration:none;
+      transition:background-color 0.3s ease;
+    }
+    .btn-signup:hover { background:#00d4b3; }
+    .about-header {
+      text-align:center;
+      padding:4rem 1rem 2rem;
+    }
+    .about-header h1 {
+      font-size:2.8rem;
+      color:#2dd4bf;
+      margin-bottom:1rem;
+    }
+    .about-header p {
+      font-size:1.15rem;
+      color:#cbd5e1;
+      max-width:800px;
+      margin:0 auto 2rem;
+      line-height:1.6;
+    }
+    .values-section {
+      display:flex;
+      flex-wrap:wrap;
+      gap:2rem;
+      justify-content:center;
+      padding:0 1rem 4rem;
+    }
+    .value-card {
+      background:#1e293b;
+      border-radius:8px;
+      flex:1 1 250px;
+      padding:2rem;
+      box-shadow:0 6px 16px rgba(0,0,0,0.5);
+    }
+    .value-card h3 {
+      color:#00bfa5;
+      font-size:1.6rem;
+      margin-bottom:0.75rem;
+    }
+    .value-card p {
+      color:#cbd5e1;
+      line-height:1.5;
+    }
+    .mission-vision {
+      background:#111a2b;
+      padding:3rem 1rem;
+      text-align:center;
+    }
+    .mission-vision h2 {
+      color:#2dd4bf;
+      font-size:2rem;
+      margin-bottom:1rem;
+    }
+    .mission-vision p {
+      color:#cbd5e1;
+      max-width:700px;
+      margin:0 auto 1.5rem;
+      line-height:1.6;
+      font-size:1.1rem;
+    }
+    @media (max-width:768px) {
+      .about-header h1 { font-size:2.2rem; }
+      .value-card { padding:1.5rem; }
+    }
+    footer { margin-top:3rem; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#" class="logo">Bridgo</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="#">Features</a>
+        <div class="dropdown-content">
+          <a href="tall.html">Tallest</a>
+          <a href="oldest.html">Oldest</a>
+          <a href="popular.html">Popular</a>
+        </div>
+      </li>
+      <li><a href="queries.html">Queries</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="aboutus.html">About</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+      <li><a href="#">Travel</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="signup.html" class="btn-signup">Sign Up</a>
+  </nav>
+
+  <section class="about-header">
+    <h1>Our Story</h1>
+    <p>
+      At Bridgo, we believe every bridge, every span, every landmark tells a story — of human ambition, of connection, of architecture meeting nature. We started with a simple idea: to bring the world’s greatest bridges into your hands, and in doing so, connect people, places and possibilities.
+    </p>
+  </section>
+
+  <section class="mission-vision">
+    <h2>Mission & Vision</h2>
+    <p>
+      Our mission is to empower curious travellers and history enthusiasts to explore the world's most iconic bridges, towers and engineering marvels — one story at a time.  
+    </p>
+    <p>
+      Our vision is to be the definitive destination for landmark discovery, where design-meets-engineering and history meets modern travel. We aim to build a community that celebrates not just structures made of steel and stone, but the connections they enable.
+    </p>
+  </section>
+
+  <section class="values-section">
+    <div class="value-card">
+      <h3>Discovery</h3>
+      <p>We champion exploration — uncovering hidden gems as well as celebrated icons. Whether you’re climbing heights or tracing ancient paths, Bridgo is your gateway to discovery.</p>
+    </div>
+    <div class="value-card">
+      <h3>Inspiration</h3>
+      <p>Travel stirs the soul. We highlight engineering feats and architectural beauty that instill wonder, spark ideas and inspire action.</p>
+    </div>
+    <div class="value-card">
+      <h3>Authenticity</h3>
+      <p>Every landmark has a story, every structure a purpose. We deliver genuine insights, real-world facts and a respectful approach to heritage and design.</p>
+    </div>
+    <div class="value-card">
+      <h3>Connection</h3>
+      <p>Bridges connect more than land — they connect people. We aim to foster global connections by showcasing how structures bring communities together.</p>
+    </div>
+  </section>
+
+  <footer class="bg-dark text-center text-lg-start text-light">
+    <div class="container p-4">
+      <div class="row">
+        <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Bridgo</h5>
+          <p>
+            Explore the world’s most iconic bridges, towers, and landmarks with Bridgo.  
+            Learn about history, design, and engineering — all in one place.
+          </p>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Quick Links</h5>
+          <ul class="list-unstyled mb-0">
+            <li><a href="index.html" class="text-light text-decoration-none">Home</a></li>
+            <li><a href="popular.html" class="text-light text-decoration-none">Popular</a></li>
+            <li><a href="tall.html" class="text-light text-decoration-none">Tallest</a></li>
+            <li><a href="gallery.html" class="text-light text-decoration-none">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Contact</h5>
+          <ul class="list-unstyled mb-0">
+            <li>info@bridgo.com</li>
+            <li>+92 300 1234567</li>
+            <li>Karachi, Pakistan</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
